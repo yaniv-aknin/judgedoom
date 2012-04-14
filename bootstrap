@@ -1,0 +1,10 @@
+_ns() {
+    which python2.7 > /dev/null || { echo 'no python2.7, no bootstrap'; return; }
+    [ -z "$VIRTUAL_ENV" ] || { echo 'you in venv, no bootstrap'; return; }
+    grep -sq b1b895b491c6 bootstrap || { echo 'cant find bootstrap script; are you in project root?'; return; }
+    curl -Lfs https://raw.github.com/pypa/virtualenv/1.7/virtualenv.py | python2.7 - .venv || return
+    echo 'source "$VIRTUAL_ENV"/../.bashrc' >> .venv/bin/activate
+    source .venv/bin/activate
+    pip install -r requirements.txt
+}
+_ns

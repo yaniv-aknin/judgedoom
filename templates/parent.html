@@ -1,0 +1,25 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd" >
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:og="http://ogp.me/ns#" xmlns:fb="http://www.facebook.com/2008/fbml" >
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>Judge Doom</title>
+        <style>
+            body {
+                background: #ccc;
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>iframe content below</h1>
+        <iframe
+            id="judge_doom_iframe"
+            src="{{ args.src|default("http://www.example.com/")|escape }}"
+            width="{{ args.width|default("1366px")|escape }}"
+            height="{{ args.height|default("768px")|escape }}"
+            frameborder="{{ args.frameborder|default("0")|escape }}"
+        >
+            Your browser does not support iframes?
+        </iframe>
+    </body>
+</html>
